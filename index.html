@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Geminal — Neon Games</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%238a2be2'/%3E%3Ctext x='50%25' y='58%25' font-size='36' text-anchor='middle' fill='white'%3EG%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <!-- Top bar -->
+  <header class="topbar">
+    <div class="brand">
+      <span class="gem">Geminal</span>
+      <span class="spark"></span>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-outline" id="toggleTheme" aria-label="Toggle theme">Theme</button>
+      <button class="btn btn-outline" id="openAbout" aria-label="About">About</button>
+    </div>
+  </header>
+
+  <!-- Hero / launcher -->
+  <section class="hero">
+    <h1 class="hero-title">Neon-quick launcher</h1>
+    <p class="hero-sub">Unblocked vibes. Purple gradients. Clean player.</p>
+
+    <div class="search-wrap">
+      <input id="searchInput" class="search" type="text" placeholder="Search games… (Ctrl+K)" autocomplete="off" />
+      <button id="clearSearch" class="btn btn-clear">Clear</button>
+    </div>
+
+    <div class="filters">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="arcade">Arcade</button>
+      <button class="chip" data-filter="puzzle">Puzzle</button>
+      <button class="chip" data-filter="sport">Sport</button>
+      <button class="chip" data-filter="retro">Retro</button>
+      <button class="chip" data-filter="favorites">Favorites</button>
+    </div>
+  </section>
+
+  <!-- Grid -->
+  <main class="grid" id="gameGrid" aria-live="polite">
+    <!-- Cards populated by app.js -->
+  </main>
+
+  <!-- Player drawer -->
+  <section class="player" id="player">
+    <div class="player-bar">
+      <div class="player-title" id="playerTitle">Select a game</div>
+      <div class="player-actions">
+        <button class="btn btn-outline" id="favoriteBtn" aria-label="Favorite">★</button>
+        <button class="btn btn-outline" id="openNewTab" aria-label="Open in new tab">↗</button>
+        <button class="btn btn-outline danger" id="closePlayer" aria-label="Close">✕</button>
+      </div>
+    </div>
+    <iframe id="playerFrame" title="Geminal game player" sandbox="allow-scripts allow-same-origin allow-pointer-lock allow-forms" loading="lazy"></iframe>
+  </section>
+
+  <!-- About modal -->
+  <dialog id="aboutModal">
+    <h3>Geminal</h3>
+    <p>Neon purple, gradient-powered unblocked game launcher. Modular, fast, and audience-friendly.</p>
+    <p>Shortcuts: Ctrl+K search, Enter to open, F to favorite, Esc to close player.</p>
+    <button class="btn" id="closeAbout">Close</button>
+  </dialog>
+
+  <footer class="footer">
+    <span>© Geminal • Neon purple gradients • Unblocked launcher</span>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
