@@ -3,7 +3,7 @@ const GAMES = [
   {
     id: "slope",
     title: "Slope",
-    url: "games/slope.html/index.html",
+    url: "games/slope.html/",
     tags: ["arcade", "retro"],
     thumb: "SLOPE"
   },
